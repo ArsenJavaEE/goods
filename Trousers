@@ -1,0 +1,53 @@
+package com.clothes;
+
+
+public class Trousers extends Clothes {
+
+	public String colorCode;
+	public int itemID;
+	public String size;
+
+	public Trousers() {
+	}
+
+	public Trousers(String colorCode, int itemID, String size, int price,
+			String name) {
+		super(price, name);
+		this.colorCode = colorCode;
+		this.itemID = itemID;
+		this.size = size;
+	}
+
+	public String getColorCode() {
+		return colorCode;
+	}
+
+	public void setColorCode(String colorCode) {
+		this.colorCode = colorCode;
+	}
+
+	public int getItemID() {
+		return itemID;
+	}
+
+	public String getSize() {
+		return size;
+	}
+
+	public void setSize(String size) {
+		this.size = size;
+	}
+
+	public void setItemID(int itemID) {
+		this.itemID = itemID;
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "[ Арт.: " + itemID + " Название: " + getName() + "\n Цвет: "
+				+ colorCode + ", размер: " + size + "\n Цена " + getPrice() + "]";
+	}
+
+}
