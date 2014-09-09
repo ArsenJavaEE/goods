@@ -1,0 +1,21 @@
+package com.clothes;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Shirt ob = new Shirt("red", 01, 23, "Armany");
+
+		Shirt ob1 = new Shirt("blue", 02, 8, "D&G");
+
+		Trousers jd = new Trousers("black", 01, "XL", 5, "Voronin");
+
+		Box.add(jd);
+		Box.add(ob1);
+		Box.add(ob);
+		Box.sort();
+		System.out.println("\n Общее колличество :" + Box.count() + "шт\n");
+
+		Box.get(1);
+		System.out.println(Box.get(1));
+	}
+}
