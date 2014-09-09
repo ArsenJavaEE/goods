@@ -1,0 +1,79 @@
+package com.clothes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Box {
+
+	public static List<Clothes> base = new ArrayList<Clothes>();
+
+	public static void add(Clothes obj) {
+		base.add(obj);
+	}
+
+	public static Clothes get(int index) {
+		return base.get(index);
+	}
+
+	public static int count() {
+		return base.size();
+	}
+
+	public static void print() {
+		System.out.println(base.toString());
+	}
+
+	public static void sort() {
+		Clothes temp = null;
+		for (int i = 0; i < base.size() - 1; i++) {
+			for (int j = i + 1; j < base.size(); j++) {
+				base.get(i);
+				if (base.get(i).getPrice() > base.get(j).getPrice()) {
+					temp = base.get(i);
+					base.set(j, temp);
+				}
+			}
+		}
+
+		for (Clothes list : base) {
+			System.out.println(list);
+		}
+	}
+
+	// public static void sort1() {
+	// Collections.sort(base, new Comparator<Clothes>() {
+	//
+	// @Override
+	// public int compare(Clothes arg0, Clothes arg1) {
+	// int result = 0;
+	// if (arg0.getPrice()>arg1.getPrice()){
+	// result = 1;
+	// }
+	// if (arg0.getPrice()<arg1.getPrice()){
+	// result = -1;
+	// }
+	//
+	// return result;
+	// }
+	// });
+	// for (Clothes clothes : base) {
+	// System.out.println(clothes);
+	// }
+	//
+	// }
+
+	public static double averageMetod(double avg) {
+
+		int count = base.size();
+
+		for (int i = 0; i < base.size(); i++) {
+			avg += base.get(i).getPrice();
+
+		}
+		avg /= count;
+
+		return avg;
+
+	}
+
+}
